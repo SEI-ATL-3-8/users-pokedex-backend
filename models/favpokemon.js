@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      models.favPokemon.belongsTo(models.user)
+      // define associations here
     }
   };
   favPokemon.init({
