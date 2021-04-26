@@ -1,6 +1,6 @@
 const models = require('./models')
 
-const testing = async () => {
+/* const testing = async () => {
     const userA = await models.user.create({
         name: 'Tim',
         email: 'tim@test.com',
@@ -49,4 +49,4 @@ const testing = async () => {
 
 }
 
-testing()
+testing() */
