@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.user.hasMany(models.favPokemon)
+      models.user.belongsToMany(models.favPokemon, {through: 'user_pokemon'})
     }
     checkPassword(plainPassword) {
       return bcrypt.compareSync(plainPassword, this.password)
