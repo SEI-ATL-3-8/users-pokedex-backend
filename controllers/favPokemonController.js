@@ -25,7 +25,7 @@ favPokemonController.create = async (req, res) => {
 favPokemonController.destroy = async (req, res) => {
   try {
     const deleteResult = await models.favPokemon.destroy({
-      where: { id: req.params.id }
+      where: { name: req.params.name }
     })
     res.json({ deleteResult })
   } catch (error) {
