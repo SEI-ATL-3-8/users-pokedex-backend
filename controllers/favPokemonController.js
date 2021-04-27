@@ -33,4 +33,15 @@ favPokemonController.destroy = async (req, res) => {
   }
 }
 
+
+favPokemonController.index = async (req, res) => {
+  try {
+    const favPokemon = await models.favPokemon.findAll()
+    res.json({ favPokemon })
+    
+  } catch (error) {
+    res.status(400).json({ error: error.message })
+  }
+}
+
 module.exports = favPokemonController
