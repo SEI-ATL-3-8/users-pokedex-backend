@@ -1,4 +1,5 @@
 const models = require('../models')
+
 const userController = {}
 
 
@@ -31,17 +32,23 @@ userController.login = async (req, res) => {
         res.status(400).json({ error: error.message })
     }
 
-
-    
-    // userController.index = async (req, res) => {
-    //   try {
-    //     const favPokemon = await models.favPokemon.findAll()
-    //     res.json({ favPokemon })
-        
-    //   } catch (error) {
-    //     res.status(400).json({ error: error.message })
-    //   }
-    // }
 }
 
-module.exports = userController
+userController.verifyUser = async (req, res) => {
+        try {
+            const findUser = await models.user.findOne({
+                where: {
+                    id: req.headers.authorization 
+                }
+            })
+            res.json({findUser})      
+        } catch (error) {
+            res.json({error})
+        }
+    }
+
+
+
+
+
+module.exports = userController;
