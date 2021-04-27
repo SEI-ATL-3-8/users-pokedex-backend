@@ -29,6 +29,7 @@ userController.loginUser = async (req, res) => {
         })
 
         const encryptedId = jwt.sign ( { userId: user.id }, process.env.JWT_SECRET)
+        console.log(encryptedId)
 
         if ( user.checkPassword(req.body.password) ) {
             res.json({message: 'Login successful', userId: encryptedId, user})

@@ -25,6 +25,7 @@ favPokemonController.index = async (req, res) => {
 favPokemonController.create = async (req, res) => {
   try {
     const decryptedId = jwt.verify(req.headers.authorization, process.env.JWT_SECRET)
+    console.log(decryptedId)
 
     const user = await models.user.findOne ({
         where: {
@@ -57,13 +58,13 @@ favPokemonController.destroy = async (req, res) => {
     })
 
     const pokemon = await models.favPokemon.findOne({
-      where: { id: req.params.id }
+      where: { name: req.params.id }
     })
 
     const removeFav = await user.removeFavPokemon(pokemon)
 
     const deleteResult = await models.favPokemon.destroy({
-      where: { id: req.params.id }
+      where: { name: req.params.id }
     })
     
     res.json({ deleteResult, removeFav })

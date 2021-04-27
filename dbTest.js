@@ -44,9 +44,6 @@ const models = require('./models')
     console.log(savedtry2)
     console.log(savedtry3)
     console.log(savedtry4)
-
-
-
 }
 
 testing() */
