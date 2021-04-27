@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
 
@@ -9,7 +10,9 @@ app.use(require('cors')())
 
 
 const favPokemonRoutes = require('./routes/favPokemonRoutes')
+const userRoutes = require('./routes/UserRoutes')
 app.use('/favPokemon', favPokemonRoutes)
+app.use('/users', userRoutes)
 
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
