@@ -9,7 +9,10 @@ app.use(require('cors')())
 
 
 const favPokemonRoutes = require('./routes/favPokemonRoutes')
+const userRoutes = require('./routes/userRoutes')
+
 app.use('/favPokemon', favPokemonRoutes)
+app.use('/user', userRoutes)
 
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {

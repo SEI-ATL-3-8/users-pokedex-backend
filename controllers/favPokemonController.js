@@ -33,4 +33,6 @@ favPokemonController.destroy = async (req, res) => {
   }
 }
 
+
+
 module.exports = favPokemonController
