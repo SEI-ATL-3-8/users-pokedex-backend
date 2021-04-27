@@ -25,7 +25,6 @@ favPokemonController.index = async (req, res) => {
 favPokemonController.create = async (req, res) => {
   try {
     const decryptedId = jwt.verify(req.headers.authorization, process.env.JWT_SECRET)
-    console.log(decryptedId)
 
     const user = await models.user.findOne ({
         where: {
