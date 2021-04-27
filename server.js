@@ -7,6 +7,8 @@ const routesReport = require('rowdy-logger').begin(app)
 app.use(express.json())
 app.use(require('cors')())
 
+const userRouter = require('./routes/userRouter')
+app.use('/user', userRouter)
 
 const favPokemonRoutes = require('./routes/favPokemonRoutes')
 app.use('/favPokemon', favPokemonRoutes)
